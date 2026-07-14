@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Honeywell Engineering Console — Conversion.exe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-canvas" aria-hidden="true">
+  <div class="blob blob-a"></div>
+  <div class="blob blob-b"></div>
+  <div class="blob blob-c"></div>
+  <div class="noise"></div>
+</div>
+
+<div class="app-window" id="appWindow">
+
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="26" height="26">
+          <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#gradMark)"/>
+          <path d="M15 14v20M33 14v20M15 24h18" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="gradMark" x1="0" y1="0" x2="48" y2="48">
+              <stop offset="0%" stop-color="#5B8CFF"/>
+              <stop offset="100%" stop-color="#8B6BFF"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <div class="brand-text">
+        <h1>Honeywell Engineering Console</h1>
+        <p>Employee Lifecycle Automation</p>
+      </div>
+    </div>
+    <div class="build-tag">
+      <span>Build v2026.FT</span>
+      <span class="dot dot-live" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <main class="workspace">
+
+    <nav class="timeline" aria-label="Automation workflow progress">
+      <p class="timeline-eyebrow">Automation Workflow</p>
+      <ol class="timeline-list" id="timelineList">
+        <!-- stages injected by JS -->
+      </ol>
+    </nav>
+
+    <section class="stage-viewport" id="stageViewport" aria-live="polite">
+      <!-- stage content injected by JS -->
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <div class="footer-item">
+      <svg class="footer-icon" viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M3 12h4l2 6 4-14 2 8h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <span class="footer-label">Status</span>
+        <span class="footer-value" id="statusValue">Ready</span>
+      </div>
+    </div>
+    <div class="footer-item">
+      <svg class="footer-icon" viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M6 2h9l3 3v17H6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 11h6M9 15h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <div>
+        <span class="footer-label">Execution ID</span>
+        <span class="footer-value" id="execIdValue">H661555</span>
+      </div>
+    </div>
+    <div class="footer-item">
+      <svg class="footer-icon" viewBox="0 0 24 24" width="16" height="16" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <div>
+        <span class="footer-label">Runtime</span>
+        <span class="footer-value" id="runtimeValue">00:00</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+<div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
